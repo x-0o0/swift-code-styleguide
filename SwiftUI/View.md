@@ -14,7 +14,10 @@ struct BookEditView: View { }
 ```
 
 2. 목록에 대한 뷰인가?
-- `*List`
+	1. 카테고리 선택에 사용하는가?
+ 		- `*Picker`
+   	2. 정보 나열인가? (일반적인 케이스)  	 
+		- `*List`
 
 3. 나열되는 아이템에 대한 뷰인가?
 	1. 아이템이 `List` 의 row content 로 사용되는가?
