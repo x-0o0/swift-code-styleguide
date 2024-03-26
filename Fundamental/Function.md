@@ -39,6 +39,15 @@ func onTapGesture(
 
 get, set 이름으로 시작할까 고민인데 파라미터가 필요없는 경우라면 프로퍼티에 get, set 을 정의해볼 수 있지 않은지 고민해볼 것
 
+### 기존 객체에 영향을 주는지 안주는지에 따라 네이밍
+
+```swift
+var books: [Book] = [.어린왕자, .로빈슨크루소, .톰소여의모험]
+
+books.sort() // books 를 정렬
+let sortedBooks = books.sorted() // books 는 그대로, 정렬된 새로운 객체 리턴
+```
+
 ### 함수 사용시 하나의 문장이 될 수 있도록 파라미터명을 지을 것
 
 ```swift
