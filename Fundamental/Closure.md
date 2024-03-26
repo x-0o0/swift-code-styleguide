@@ -6,7 +6,7 @@
 
 ```swift
 struct BookStore {
-    var fetchBook: (_ bookName: String?, _ author: String?) async throws -> [Book]
+    var fetchBooks: (_ bookName: String?, _ author: String?) async throws -> [Book]
 }
 ```
 
@@ -28,7 +28,7 @@ typealias BookName = String
 typealias AuthorName = String
 
 struct BookStore {
-    var fetchBook: (BookName?, AuthorName?) async throws -> [Book]
+    var fetchBooks: (BookName?, AuthorName?) async throws -> [Book]
 }
 ```
 
@@ -36,7 +36,7 @@ struct BookStore {
 
 ```swift
 BookStore(
-    fetchBook: (String?, String?) async throws -> [Book]
+    fetchBooks: (String?, String?) async throws -> [Book]
 )
 ```
 
@@ -47,10 +47,10 @@ BookStore { bookName, author in
 }
 ```
 
-`fetchBook` 이라는 파라미터명을 살리고 싶은 경우 이 상태에서 바로 사용해야한다.
+`fetchBooks` 이라는 파라미터명을 살리고 싶은 경우 이 상태에서 바로 사용해야한다.
 ```swift
 BookStore(
-    fetchBook: {  } 
+    fetchBooks: {  } 
 )
 ```
 
@@ -65,12 +65,12 @@ BookStore(
 typealias BookName = String
 typealias AuthorName = String
 
-var fetchBook: (BookName?, AuthorName?) async throws -> [Book]
+var fetchBooks: (BookName?, AuthorName?) async throws -> [Book]
 ```
 
 그러면 `BookStore` 객체 생성시 다음과 같이 클로져의 타입이 표시된다.
 ```swift
 BookStore(
-    fetchBook: (BookName?, AuthorName?) async throws -> [Book]
+    fetchBooks: (BookName?, AuthorName?) async throws -> [Book]
 )
 ```
